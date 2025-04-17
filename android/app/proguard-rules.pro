@@ -1,0 +1,4 @@
+-keep class org.pytorch.** { *; }
+-keep class com.abdelaziz_mahdy.pytorch_lite.** { *; }
+-dontwarn org.pytorch.**
+-dontwarn com.abdelaziz_mahdy.pytorch_lite.**
