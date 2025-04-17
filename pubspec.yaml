@@ -39,6 +39,7 @@ dependencies:
   pytorch_lite: ^4.3.2
   flutter_launcher_icons: "^0.14.3"
   rename_app: ^1.6.2
+  tflite_flutter: ^0.11.0
 
 dev_dependencies:
   flutter_test:

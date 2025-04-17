@@ -40,7 +40,7 @@ class _DescriptState extends State<Descript> {
     });
 
     try {
-      final result = await ClassNamesifier().predictAnimal();
+      final result = await Classifier().predictAnimal();
       if (mounted) {
         // Only update if the prediction has changed
         if (result['animal'] != _animalDataNotifier.value?['animal'] ||
