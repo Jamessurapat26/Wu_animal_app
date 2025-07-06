@@ -97,7 +97,7 @@ class _DescriptState extends State<Descript> {
     }
 
     return Container(
-      color: theme.colorScheme.background,
+      color: theme.colorScheme.background.withOpacity(0.2), // Added opacity
       padding: const EdgeInsets.all(24.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -120,12 +120,13 @@ class _DescriptState extends State<Descript> {
                       Text(
                         animalData['animal'] ?? '',
                         style: TextStyle(
-                          fontSize: 36,
-                          fontWeight: FontWeight.w300,
-                          color:
-                              theme.brightness == Brightness.dark
-                                  ? Colors.white
-                                  : Colors.black87,
+                          fontSize: 45,
+                          fontWeight: FontWeight.w600,
+                          // color:
+                          //     theme.brightness == Brightness.dark
+                          //         ? Colors.white
+                          //         : Colors.black87,
+                          color: Colors.white,
                           letterSpacing: 1.2,
                         ),
                       ),
@@ -154,9 +155,11 @@ class _DescriptState extends State<Descript> {
                     animalData['description'] ?? '',
                     style: theme.textTheme.bodyLarge?.copyWith(
                       color:
-                          theme.brightness == Brightness.dark
-                              ? Colors.white70
+                          theme.brightness == Brightness.light
+                              ? Colors.white
                               : Colors.black54,
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   const SizedBox(height: 40),
@@ -187,14 +190,15 @@ class _DescriptState extends State<Descript> {
                             style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.w500,
-                              color: theme.primaryColor,
+                              color: Colors.lightBlueAccent,
                             ),
                           ),
                           const SizedBox(height: 8),
                           Text(
                             animalData[keys[2]] ?? '',
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 18,
+                              fontWeight: FontWeight.w300,
                               color:
                                   theme.brightness == Brightness.dark
                                       ? Colors.white70
@@ -205,6 +209,18 @@ class _DescriptState extends State<Descript> {
                         ],
                       ),
                     ),
+                  // const SizedBox(height: 16),
+                  // Center(
+                  //   child: Column(
+                  //     children: [
+                  //       Image.asset(
+                  //         'assets/tiger.png',
+                  //         height: 200,
+                  //         fit: BoxFit.contain,
+                  //       ),
+                  //     ],
+                  //   ),
+                  // ),
                 ],
               );
             },

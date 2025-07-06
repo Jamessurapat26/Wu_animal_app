@@ -109,32 +109,48 @@ class _CameraPreviewWithBoxState extends State<CameraPreviewWithBox> {
                   "Camera",
                   style: theme.textTheme.headlineMedium?.copyWith(
                     color: theme.primaryColor,
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w700,
                     letterSpacing: 0.5,
                     fontSize: 28.0,
                   ),
                 ),
-                Row(
-                  children: [
-                    IconButton(
-                      icon: Icon(
-                        _isCapturing ? Icons.stop : Icons.play_arrow,
-                        color: _isCapturing ? Colors.red : theme.primaryColor,
-                      ),
-                      onPressed: () {
-                        _isCapturing ? _stopCapturing() : _startCapturing();
-                      },
+                GestureDetector(
+                  onTap: () {
+                    _isCapturing ? _stopCapturing() : _startCapturing();
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color:
+                          _isCapturing
+                              ? Colors.red.withOpacity(0.2)
+                              : theme.primaryColor.withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    if (_isCapturing)
-                      Container(
-                        width: 10,
-                        height: 10,
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          shape: BoxShape.circle,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 12,
+                      vertical: 6,
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          _isCapturing ? Icons.stop : Icons.play_arrow,
+                          color: _isCapturing ? Colors.red : theme.primaryColor,
+                          size: 18,
                         ),
-                      ),
-                  ],
+                        const SizedBox(width: 6),
+                        Text(
+                          _isCapturing ? 'Stop' : 'Start',
+                          style: TextStyle(
+                            color:
+                                _isCapturing ? Colors.red : theme.primaryColor,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 14,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
               ],
             ),

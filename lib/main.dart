@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screen/home.dart';
+import 'screen/startScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,8 +15,8 @@ class MyApp extends StatelessWidget {
       title: 'WU Animal App',
       theme: ThemeData(
         // Primary colors
-        primaryColor: Colors.deepPurple,
-        primarySwatch: Colors.deepPurple,
+        primaryColor: Colors.white70,
+        primarySwatch: Colors.blue,
 
         // Text themes
         textTheme: const TextTheme(
@@ -40,7 +41,7 @@ class MyApp extends StatelessWidget {
 
         // AppBar theme
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.deepPurple,
+          backgroundColor: Colors.cyan,
           foregroundColor: Colors.white,
           elevation: 0,
         ),
@@ -71,7 +72,7 @@ class MyApp extends StatelessWidget {
         ),
       ),
       themeMode: ThemeMode.system,
-      home: const HomeScreen(),
+      home: const Startscreen(),
     );
   }
 }
